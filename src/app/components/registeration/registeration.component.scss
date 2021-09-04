@@ -1,0 +1,56 @@
+.registeration-form {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+  form {
+    border: 1px solid #cacaca;
+    background: #eee;
+    min-width: 40%;
+    padding: 24px 12px;
+    .heading {
+      color: darkcyan;
+      margin: 0 0 8px 8px;
+    }
+    .form-content {
+      min-width: 80%;
+      .control {
+        label {
+          display: block;
+        }
+        input,
+        select {
+          width: 100%;
+          padding: 4px;
+        }
+        input[type="submit"] {
+          border: 2px solid darkcyan;
+          background-color: #eee;
+          color: darkcyan;
+          font-weight: 700;
+          padding: 4px 2px;
+          margin-top: 8px;
+          &:hover,
+          &:focus {
+            border: 2px solid #eee;
+            background-color: darkcyan;
+            color: #eee;
+          }
+        }
+        .error {
+          border: 2px solid red;
+        }
+        .error-message {
+          color: red;
+        }
+
+        margin: 8px;
+      }
+
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    }
+  }
+}

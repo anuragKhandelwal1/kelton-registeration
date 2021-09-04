@@ -1,0 +1,11 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 12px;
+  background: #eee;
+  a {
+    font-weight: 700;
+    font-size: 1.5em;
+  }
+}

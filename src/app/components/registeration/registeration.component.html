@@ -1,0 +1,74 @@
+<div class="registeration-form">
+  <form [formGroup]="formGroup" (ngSubmit)="onSubmit()" *ngIf="formGroup">
+    <h2 class="heading">Register User</h2>
+    <div class="form-content">
+      <div class="control">
+        <label for="firstName">First Name<span *ngIf="formGroup.controls.firstName.errors?.required">*</span></label>
+        <input type="text" id="firstName" formControlName="firstName" [class.error]="
+          formGroup.controls.firstName.hasError('minlength') ||
+          (formGroup.controls.firstName.hasError('required') &&
+            formGroup.controls.firstName.touched)
+        " />
+
+        <div class="error-message" *ngIf="
+          formGroup.controls.firstName.hasError('minlength') ||
+          (formGroup.controls.firstName.hasError('required') &&
+            formGroup.controls.firstName.touched)
+        ">
+          Required and minimum charater length is 6
+        </div>
+      </div>
+
+      <div class="control">
+        <label for="phoneNumber">Last Name<span *ngIf="formGroup.controls.lastName.errors?.required">*</span></label>
+        <input type="text" id="lastName" formControlName="lastName" [class.error]="
+          formGroup.controls.lastName.hasError('minlength') ||
+          (formGroup.controls.lastName.hasError('required') &&
+            formGroup.controls.lastName.touched)
+        " />
+        <div class="error-message" *ngIf="
+          formGroup.controls.lastName.hasError('minlength') ||
+          (formGroup.controls.lastName.hasError('required') &&
+            formGroup.controls.lastName.touched)
+        ">
+          Required and minimum charater length is 6
+        </div>
+      </div>
+
+      <div class="control">
+        <label for="phoneNumber">Phone Number<span
+            *ngIf="formGroup.controls.phoneNumber.errors?.required">*</span></label>
+        <input type="number" id="phoneNumber" formControlName="phoneNumber" [class.error]="
+          formGroup.controls.phoneNumber.hasError('required') &&
+          formGroup.controls.phoneNumber.touched
+        " />
+        <div class="error-message" *ngIf="
+          formGroup.controls.phoneNumber.hasError('required') &&
+          formGroup.controls.phoneNumber.touched
+        ">
+          Required
+        </div>
+      </div>
+
+      <div class="control">
+        <label for="country">Country<span *ngIf="formGroup.controls.country.errors?.required">*</span></label>
+        <select autocomplete="on" id="country" formControlName="country" [class.error]="
+          formGroup.controls.country.hasError('required') &&
+          formGroup.controls.country.touched
+        ">
+          <option *ngFor="let country of countries" [value]="country.id">{{country.value}}</option>
+        </select>
+        <div class="error-message" *ngIf="
+          formGroup.controls.country.hasError('required') &&
+          formGroup.controls.country.touched
+        ">
+          Required
+        </div>
+      </div>
+
+      <div class="control">
+        <input type="submit" value="Register" />
+      </div>
+    </div>
+  </form>
+</div>
